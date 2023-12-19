@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ drink }}{% endblock %}
+
+{% block content %}
+    <h1>{{drink}}</h1>
+    <h2>{{drink.price}}</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">В корзину</button>
+    </form>
+{% endblock %}

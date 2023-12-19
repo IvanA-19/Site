@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{restaurant}}{% endblock %}
+
+{% block content %}
+    <p>
+        <h1>{{restaurant}}</h1>
+    </p>
+    <a href="{% url 'main:food' restaurant.id %}">Еда</a>-
+    <a href="{% url 'main:drinks' restaurant.id %}">Напитки</a>
+{% endblock %}
+

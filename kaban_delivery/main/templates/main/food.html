@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{restaurant}} еда{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for pos in food %}
+            <li>
+                <a href="{% url 'main:dish' restaurant.id pos.id %}">
+                    <h3>
+                        {{pos}}
+                    </h3>
+                </a>
+            </li>
+        {% empty %}
+            <li>
+                <h3>
+                    Пока что нет блюд, доступных для заказа!
+                </h3>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

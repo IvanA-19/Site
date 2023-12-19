@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Рестораны{% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>
+                <a href="{% url 'main:restaurant' restaurant.id %}">{{ restaurant }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

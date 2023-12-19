@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{restaurant}} Напитки{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for drink in drinks %}
+            <li>
+                <a href="{% url 'main:drink' restaurant.id drink.id %}">{{drink}}</a>
+            </li>
+        {% empty %}
+            <li>Пока что нет напитков, доступных для заказа</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

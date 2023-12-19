@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{dish}}{% endblock %}
+
+{% block content %}
+
+    <h1>{{dish}}</h1>
+    <h2>{{dish.price}}</h2>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">В корзину</button>
+
+    </form>
+
+{% endblock %}
